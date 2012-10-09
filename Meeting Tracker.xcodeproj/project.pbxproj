@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16A9745A1623D44B008816C2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A974591623D44B008816C2 /* Cocoa.framework */; };
+		16A974641623D44B008816C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16A974621623D44B008816C2 /* InfoPlist.strings */; };
+		16A974661623D44B008816C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A974651623D44B008816C2 /* main.m */; };
+		16A9746A1623D44B008816C2 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 16A974681623D44B008816C2 /* Credits.rtf */; };
+		16A9746D1623D44B008816C2 /* BDADocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A9746C1623D44B008816C2 /* BDADocument.m */; };
+		16A974701623D44B008816C2 /* BDADocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16A9746E1623D44B008816C2 /* BDADocument.xib */; };
+		16A974731623D44C008816C2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16A974711623D44C008816C2 /* MainMenu.xib */; };
+		16A9747B1623D44C008816C2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A9747A1623D44C008816C2 /* SenTestingKit.framework */; };
+		16A9747C1623D44C008816C2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A974591623D44B008816C2 /* Cocoa.framework */; };
+		16A974841623D44C008816C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16A974821623D44C008816C2 /* InfoPlist.strings */; };
+		16A974871623D44C008816C2 /* Meeting_TrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A974861623D44C008816C2 /* Meeting_TrackerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		16A9747D1623D44C008816C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 16A9744C1623D44B008816C2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 16A974541623D44B008816C2;
+			remoteInfo = "Meeting Tracker";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		16A974551623D44B008816C2 /* Meeting Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meeting Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		16A974591623D44B008816C2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		16A9745C1623D44B008816C2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		16A9745D1623D44B008816C2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		16A9745E1623D44B008816C2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		16A974611623D44B008816C2 /* Meeting Tracker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Meeting Tracker-Info.plist"; sourceTree = "<group>"; };
+		16A974631623D44B008816C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		16A974651623D44B008816C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		16A974671623D44B008816C2 /* Meeting Tracker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Meeting Tracker-Prefix.pch"; sourceTree = "<group>"; };
+		16A974691623D44B008816C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		16A9746B1623D44B008816C2 /* BDADocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDADocument.h; sourceTree = "<group>"; };
+		16A9746C1623D44B008816C2 /* BDADocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDADocument.m; sourceTree = "<group>"; };
+		16A9746F1623D44B008816C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BDADocument.xib; sourceTree = "<group>"; };
+		16A974721623D44C008816C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		16A974791623D44C008816C2 /* Meeting TrackerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meeting TrackerTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		16A9747A1623D44C008816C2 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		16A974811623D44C008816C2 /* Meeting TrackerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Meeting TrackerTests-Info.plist"; sourceTree = "<group>"; };
+		16A974831623D44C008816C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		16A974851623D44C008816C2 /* Meeting_TrackerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Meeting_TrackerTests.h; sourceTree = "<group>"; };
+		16A974861623D44C008816C2 /* Meeting_TrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Meeting_TrackerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		16A974521623D44B008816C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16A9745A1623D44B008816C2 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16A974751623D44C008816C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16A9747B1623D44C008816C2 /* SenTestingKit.framework in Frameworks */,
+				16A9747C1623D44C008816C2 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		16A9744A1623D44B008816C2 = {
+			isa = PBXGroup;
+			children = (
+				16A9745F1623D44B008816C2 /* Meeting Tracker */,
+				16A9747F1623D44C008816C2 /* Meeting TrackerTests */,
+				16A974581623D44B008816C2 /* Frameworks */,
+				16A974561623D44B008816C2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		16A974561623D44B008816C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				16A974551623D44B008816C2 /* Meeting Tracker.app */,
+				16A974791623D44C008816C2 /* Meeting TrackerTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		16A974581623D44B008816C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16A974591623D44B008816C2 /* Cocoa.framework */,
+				16A9747A1623D44C008816C2 /* SenTestingKit.framework */,
+				16A9745B1623D44B008816C2 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		16A9745B1623D44B008816C2 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16A9745C1623D44B008816C2 /* AppKit.framework */,
+				16A9745D1623D44B008816C2 /* CoreData.framework */,
+				16A9745E1623D44B008816C2 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		16A9745F1623D44B008816C2 /* Meeting Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				16A9746B1623D44B008816C2 /* BDADocument.h */,
+				16A9746C1623D44B008816C2 /* BDADocument.m */,
+				16A9746E1623D44B008816C2 /* BDADocument.xib */,
+				16A974711623D44C008816C2 /* MainMenu.xib */,
+				16A974601623D44B008816C2 /* Supporting Files */,
+			);
+			path = "Meeting Tracker";
+			sourceTree = "<group>";
+		};
+		16A974601623D44B008816C2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				16A974611623D44B008816C2 /* Meeting Tracker-Info.plist */,
+				16A974621623D44B008816C2 /* InfoPlist.strings */,
+				16A974651623D44B008816C2 /* main.m */,
+				16A974671623D44B008816C2 /* Meeting Tracker-Prefix.pch */,
+				16A974681623D44B008816C2 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		16A9747F1623D44C008816C2 /* Meeting TrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				16A974851623D44C008816C2 /* Meeting_TrackerTests.h */,
+				16A974861623D44C008816C2 /* Meeting_TrackerTests.m */,
+				16A974801623D44C008816C2 /* Supporting Files */,
+			);
+			path = "Meeting TrackerTests";
+			sourceTree = "<group>";
+		};
+		16A974801623D44C008816C2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				16A974811623D44C008816C2 /* Meeting TrackerTests-Info.plist */,
+				16A974821623D44C008816C2 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		16A974541623D44B008816C2 /* Meeting Tracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16A9748A1623D44C008816C2 /* Build configuration list for PBXNativeTarget "Meeting Tracker" */;
+			buildPhases = (
+				16A974511623D44B008816C2 /* Sources */,
+				16A974521623D44B008816C2 /* Frameworks */,
+				16A974531623D44B008816C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Meeting Tracker";
+			productName = "Meeting Tracker";
+			productReference = 16A974551623D44B008816C2 /* Meeting Tracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		16A974781623D44C008816C2 /* Meeting TrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16A9748D1623D44C008816C2 /* Build configuration list for PBXNativeTarget "Meeting TrackerTests" */;
+			buildPhases = (
+				16A974741623D44C008816C2 /* Sources */,
+				16A974751623D44C008816C2 /* Frameworks */,
+				16A974761623D44C008816C2 /* Resources */,
+				16A974771623D44C008816C2 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				16A9747E1623D44C008816C2 /* PBXTargetDependency */,
+			);
+			name = "Meeting TrackerTests";
+			productName = "Meeting TrackerTests";
+			productReference = 16A974791623D44C008816C2 /* Meeting TrackerTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		16A9744C1623D44B008816C2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = BDA;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Brian Alonso";
+			};
+			buildConfigurationList = 16A9744F1623D44B008816C2 /* Build configuration list for PBXProject "Meeting Tracker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 16A9744A1623D44B008816C2;
+			productRefGroup = 16A974561623D44B008816C2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				16A974541623D44B008816C2 /* Meeting Tracker */,
+				16A974781623D44C008816C2 /* Meeting TrackerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		16A974531623D44B008816C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16A974641623D44B008816C2 /* InfoPlist.strings in Resources */,
+				16A9746A1623D44B008816C2 /* Credits.rtf in Resources */,
+				16A974701623D44B008816C2 /* BDADocument.xib in Resources */,
+				16A974731623D44C008816C2 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16A974761623D44C008816C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16A974841623D44C008816C2 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16A974771623D44C008816C2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		16A974511623D44B008816C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16A974661623D44B008816C2 /* main.m in Sources */,
+				16A9746D1623D44B008816C2 /* BDADocument.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16A974741623D44C008816C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16A974871623D44C008816C2 /* Meeting_TrackerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		16A9747E1623D44C008816C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 16A974541623D44B008816C2 /* Meeting Tracker */;
+			targetProxy = 16A9747D1623D44C008816C2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		16A974621623D44B008816C2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16A974631623D44B008816C2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		16A974681623D44B008816C2 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16A974691623D44B008816C2 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		16A9746E1623D44B008816C2 /* BDADocument.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16A9746F1623D44B008816C2 /* en */,
+			);
+			name = BDADocument.xib;
+			sourceTree = "<group>";
+		};
+		16A974711623D44C008816C2 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16A974721623D44C008816C2 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		16A974821623D44C008816C2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16A974831623D44C008816C2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		16A974881623D44C008816C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		16A974891623D44C008816C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		16A9748B1623D44C008816C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Meeting Tracker/Meeting Tracker-Prefix.pch";
+				INFOPLIST_FILE = "Meeting Tracker/Meeting Tracker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		16A9748C1623D44C008816C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Meeting Tracker/Meeting Tracker-Prefix.pch";
+				INFOPLIST_FILE = "Meeting Tracker/Meeting Tracker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		16A9748E1623D44C008816C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Meeting Tracker.app/Contents/MacOS/Meeting Tracker";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Meeting Tracker/Meeting Tracker-Prefix.pch";
+				INFOPLIST_FILE = "Meeting TrackerTests/Meeting TrackerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		16A9748F1623D44C008816C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Meeting Tracker.app/Contents/MacOS/Meeting Tracker";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Meeting Tracker/Meeting Tracker-Prefix.pch";
+				INFOPLIST_FILE = "Meeting TrackerTests/Meeting TrackerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		16A9744F1623D44B008816C2 /* Build configuration list for PBXProject "Meeting Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16A974881623D44C008816C2 /* Debug */,
+				16A974891623D44C008816C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16A9748A1623D44C008816C2 /* Build configuration list for PBXNativeTarget "Meeting Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16A9748B1623D44C008816C2 /* Debug */,
+				16A9748C1623D44C008816C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		16A9748D1623D44C008816C2 /* Build configuration list for PBXNativeTarget "Meeting TrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16A9748E1623D44C008816C2 /* Debug */,
+				16A9748F1623D44C008816C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 16A9744C1623D44B008816C2 /* Project object */;
+}
