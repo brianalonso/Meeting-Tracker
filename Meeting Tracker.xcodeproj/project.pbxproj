@@ -18,6 +18,12 @@
 		16A9747C1623D44C008816C2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A974591623D44B008816C2 /* Cocoa.framework */; };
 		16A974841623D44C008816C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16A974821623D44C008816C2 /* InfoPlist.strings */; };
 		16A974871623D44C008816C2 /* Meeting_TrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A974861623D44C008816C2 /* Meeting_TrackerTests.m */; };
+		16A974921623D499008816C2 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A974911623D499008816C2 /* Person.m */; };
+		16A974951623D6FB008816C2 /* CustomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A974941623D6FB008816C2 /* CustomTests.m */; };
+		16F602DB1629060B00B27B3A /* testMeeting.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F602D81629060B00B27B3A /* testMeeting.m */; };
+		16F602DC1629060B00B27B3A /* testPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F602DA1629060B00B27B3A /* testPerson.m */; };
+		16F6030016292CCF00B27B3A /* Meeting.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F602FF16292CCF00B27B3A /* Meeting.m */; };
+		16F603141629E9CF00B27B3A /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 16F603131629E9CF00B27B3A /* icon.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,17 @@
 		16A974831623D44C008816C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		16A974851623D44C008816C2 /* Meeting_TrackerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Meeting_TrackerTests.h; sourceTree = "<group>"; };
 		16A974861623D44C008816C2 /* Meeting_TrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Meeting_TrackerTests.m; sourceTree = "<group>"; };
+		16A974901623D499008816C2 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		16A974911623D499008816C2 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		16A974931623D6FB008816C2 /* CustomTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTests.h; sourceTree = "<group>"; };
+		16A974941623D6FB008816C2 /* CustomTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTests.m; sourceTree = "<group>"; };
+		16F602D5162905BC00B27B3A /* Meeting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meeting.h; sourceTree = "<group>"; };
+		16F602D71629060B00B27B3A /* testMeeting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testMeeting.h; sourceTree = "<group>"; };
+		16F602D81629060B00B27B3A /* testMeeting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testMeeting.m; sourceTree = "<group>"; };
+		16F602D91629060B00B27B3A /* testPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testPerson.h; sourceTree = "<group>"; };
+		16F602DA1629060B00B27B3A /* testPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testPerson.m; sourceTree = "<group>"; };
+		16F602FF16292CCF00B27B3A /* Meeting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meeting.m; sourceTree = "<group>"; };
+		16F603131629E9CF00B27B3A /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +94,10 @@
 		16A9744A1623D44B008816C2 = {
 			isa = PBXGroup;
 			children = (
+				16A974901623D499008816C2 /* Person.h */,
+				16A974911623D499008816C2 /* Person.m */,
+				16F602FF16292CCF00B27B3A /* Meeting.m */,
+				16F602D5162905BC00B27B3A /* Meeting.h */,
 				16A9745F1623D44B008816C2 /* Meeting Tracker */,
 				16A9747F1623D44C008816C2 /* Meeting TrackerTests */,
 				16A974581623D44B008816C2 /* Frameworks */,
@@ -128,6 +149,7 @@
 		16A974601623D44B008816C2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				16F603131629E9CF00B27B3A /* icon.icns */,
 				16A974611623D44B008816C2 /* Meeting Tracker-Info.plist */,
 				16A974621623D44B008816C2 /* InfoPlist.strings */,
 				16A974651623D44B008816C2 /* main.m */,
@@ -140,9 +162,15 @@
 		16A9747F1623D44C008816C2 /* Meeting TrackerTests */ = {
 			isa = PBXGroup;
 			children = (
+				16F602D71629060B00B27B3A /* testMeeting.h */,
+				16F602D81629060B00B27B3A /* testMeeting.m */,
+				16F602D91629060B00B27B3A /* testPerson.h */,
+				16F602DA1629060B00B27B3A /* testPerson.m */,
 				16A974851623D44C008816C2 /* Meeting_TrackerTests.h */,
 				16A974861623D44C008816C2 /* Meeting_TrackerTests.m */,
 				16A974801623D44C008816C2 /* Supporting Files */,
+				16A974931623D6FB008816C2 /* CustomTests.h */,
+				16A974941623D6FB008816C2 /* CustomTests.m */,
 			);
 			path = "Meeting TrackerTests";
 			sourceTree = "<group>";
@@ -232,6 +260,7 @@
 				16A9746A1623D44B008816C2 /* Credits.rtf in Resources */,
 				16A974701623D44B008816C2 /* BDADocument.xib in Resources */,
 				16A974731623D44C008816C2 /* MainMenu.xib in Resources */,
+				16F603141629E9CF00B27B3A /* icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +297,8 @@
 			files = (
 				16A974661623D44B008816C2 /* main.m in Sources */,
 				16A9746D1623D44B008816C2 /* BDADocument.m in Sources */,
+				16A974921623D499008816C2 /* Person.m in Sources */,
+				16F6030016292CCF00B27B3A /* Meeting.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +307,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				16A974871623D44C008816C2 /* Meeting_TrackerTests.m in Sources */,
+				16A974951623D6FB008816C2 /* CustomTests.m in Sources */,
+				16F602DB1629060B00B27B3A /* testMeeting.m in Sources */,
+				16F602DC1629060B00B27B3A /* testPerson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +491,7 @@
 				16A9748C1623D44C008816C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16A9748D1623D44C008816C2 /* Build configuration list for PBXNativeTarget "Meeting TrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +500,7 @@
 				16A9748F1623D44C008816C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
