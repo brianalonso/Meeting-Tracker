@@ -175,7 +175,7 @@
     
     for (Person *person in [self personsPresent])
     {
-        totalrate = totalrate + [[person hourlyRate] doubleValue];
+        totalrate += [[person hourlyRate] doubleValue];
     }
     return [NSNumber numberWithDouble:totalrate];
 }
@@ -183,14 +183,12 @@
 - (NSNumber *) accruedCost
 {
     double totalcost = 0.;
-    NSTimeInterval secondsBetween = [[self endingTime] timeIntervalSinceDate:[self startingTime]];
-    double hoursBetween = secondsBetween/3600.;
     
     for (Person *person in [self personsPresent])
     {
-        totalcost = totalcost + [[person hourlyRate] doubleValue];
+        totalcost += [[person hourlyRate] doubleValue];
     }
-    return [NSNumber numberWithDouble:totalcost * hoursBetween];
+    return [NSNumber numberWithDouble:totalcost * [self elapsedHours]];
 
 }
 
