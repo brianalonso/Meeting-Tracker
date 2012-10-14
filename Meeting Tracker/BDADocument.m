@@ -36,6 +36,7 @@
 - (void) setTimer:(NSTimer *)aTime
 {
     if (_timer != aTime) {
+        [_timer invalidate];
         [_timer release];
     }
     _timer = [aTime retain];
