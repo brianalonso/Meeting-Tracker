@@ -11,26 +11,36 @@
 @class Meeting;
 @interface BDADocument : NSDocument {
     NSDateFormatter *_dateFormatter;
+    NSNumberFormatter *_numberFormatter;
     Meeting *_meeting;
     NSTimer *_timer;
 }
 
 // Properties
--(NSTimer *) timer;
--(void) setTimer:(NSTimer *)aTime;
--(NSDateFormatter *) dateFormatter;
+- (NSDateFormatter *) dateFormatter;
 - (void) setDateFormatter:(NSDateFormatter *)aDateFormatter;
--(Meeting *) meeting;
--(void) setMeeting:(Meeting *) aMeeting;
+- (NSNumberFormatter *) numberFormatter;
+- (void) setNumberFormatter:(NSNumberFormatter *)aNumberFormatter;
 
-
-// outlets
+// Outlets
 @property (assign) IBOutlet NSTextField *lblTime;
+@property (assign) IBOutlet NSTextField *lblStartTime;
+@property (assign) IBOutlet NSTextField *lblEndTime;
+@property (assign) IBOutlet NSTableView *personsTableView;
+@property (assign) IBOutlet NSButton *btnAdd;
+@property (assign) IBOutlet NSButton *btnRemove;
+@property (assign) IBOutlet NSButton *btnStartMeeting;
+@property (assign) IBOutlet NSButton *btnEndMeeting;
+@property (assign) IBOutlet NSTextField *lblElapsedTime;
+@property (assign) IBOutlet NSTextField *lblAccruedCost;
+@property (assign) IBOutlet NSTextField *lblTotalBillingRate_Polled;
 
-// actions
+// Actions
 - (IBAction)logMeeting:(NSButton *)sender;
 - (IBAction)logParticipants:(NSButton *)sender;
+- (IBAction)startMeeting:(id)sender;
+- (IBAction)endMeeting:(id)sender;
 
--(void) updateGui:(NSTimer *) theTimer;
--(void) windowWillClose:(NSNotification *) notification;
+- (void) updateGui:(NSTimer *) theTimer;
+- (void) windowWillClose:(NSNotification *) notification;
 @end

@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Meeting : NSObject
+extern NSString *personBillingRateKeypath;
+
+@interface Meeting : NSObject <NSCoding>
 {
     NSDate *_startingTime;
 	NSDate *_endingTime;
-	
 	NSMutableArray *_personsPresent;
 }
 
@@ -35,6 +36,8 @@
 
 - (NSNumber *)accruedCost;
 - (NSNumber *)totalBillingRate;
+
+- (BOOL) meetingInProgress;
 
 + (Meeting *)meetingWithStooges;
 + (Meeting *)meetingWithCaptains;

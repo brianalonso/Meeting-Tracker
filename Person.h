@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Person : NSObject {
+@interface Person : NSObject <NSCoding> {
     NSString   *_name;
     NSNumber   *_hourlyRate;
 }
@@ -17,7 +17,7 @@
 - (NSString *)name;
 - (void)setName:(NSString *)aParticipantName;
 - (NSNumber *) hourlyRate;
-- (void) setHourlyRate:(double) rate;
+- (void) setHourlyRate:(NSNumber *) rate;
 
 + (Person *)personWithName:(NSString *)name
                 hourlyRate:(double)rate;
