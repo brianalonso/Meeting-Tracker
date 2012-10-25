@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1667961516386B5F0046722A /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1667961416386B5F0046722A /* AppController.m */; };
+		1667961716386C660046722A /* txt.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1667961616386C660046722A /* txt.icns */; };
+		16679621163898300046722A /* PreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1667961F163898300046722A /* PreferenceController.m */; };
+		16679622163898300046722A /* PreferenceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16679620163898300046722A /* PreferenceController.xib */; };
 		16A9745A1623D44B008816C2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A974591623D44B008816C2 /* Cocoa.framework */; };
 		16A974641623D44B008816C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16A974621623D44B008816C2 /* InfoPlist.strings */; };
 		16A974661623D44B008816C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A974651623D44B008816C2 /* main.m */; };
@@ -23,7 +27,8 @@
 		16F602DB1629060B00B27B3A /* testMeeting.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F602D81629060B00B27B3A /* testMeeting.m */; };
 		16F602DC1629060B00B27B3A /* testPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F602DA1629060B00B27B3A /* testPerson.m */; };
 		16F6030016292CCF00B27B3A /* Meeting.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F602FF16292CCF00B27B3A /* Meeting.m */; };
-		16F603141629E9CF00B27B3A /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 16F603131629E9CF00B27B3A /* icon.icns */; };
+		16F6E55F16320D010061D107 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 16F6E55E16320D010061D107 /* icon.icns */; };
+		16F6E563163210A40061D107 /* MTIIDoc.icns in Resources */ = {isa = PBXBuildFile; fileRef = 16F6E562163210A40061D107 /* MTIIDoc.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		16A974551623D44B008816C2 /* Meeting Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meeting Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1667961316386B5F0046722A /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		1667961416386B5F0046722A /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
+		1667961616386C660046722A /* txt.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = txt.icns; sourceTree = "<group>"; };
+		1667961E163898300046722A /* PreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferenceController.h; sourceTree = "<group>"; };
+		1667961F163898300046722A /* PreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferenceController.m; sourceTree = "<group>"; };
+		16679620163898300046722A /* PreferenceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferenceController.xib; sourceTree = "<group>"; };
+		16A974551623D44B008816C2 /* Meeting Tracker III.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meeting Tracker III.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A974591623D44B008816C2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		16A9745C1623D44B008816C2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		16A9745D1623D44B008816C2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -67,7 +78,8 @@
 		16F602D91629060B00B27B3A /* testPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testPerson.h; sourceTree = "<group>"; };
 		16F602DA1629060B00B27B3A /* testPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testPerson.m; sourceTree = "<group>"; };
 		16F602FF16292CCF00B27B3A /* Meeting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meeting.m; sourceTree = "<group>"; };
-		16F603131629E9CF00B27B3A /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
+		16F6E55E16320D010061D107 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon.icns; path = ../icon.icns; sourceTree = "<group>"; };
+		16F6E562163210A40061D107 /* MTIIDoc.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MTIIDoc.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +120,7 @@
 		16A974561623D44B008816C2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				16A974551623D44B008816C2 /* Meeting Tracker.app */,
+				16A974551623D44B008816C2 /* Meeting Tracker III.app */,
 				16A974791623D44C008816C2 /* Meeting TrackerTests.octest */,
 			);
 			name = Products;
@@ -137,6 +149,11 @@
 		16A9745F1623D44B008816C2 /* Meeting Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				1667961E163898300046722A /* PreferenceController.h */,
+				1667961F163898300046722A /* PreferenceController.m */,
+				16679620163898300046722A /* PreferenceController.xib */,
+				1667961316386B5F0046722A /* AppController.h */,
+				1667961416386B5F0046722A /* AppController.m */,
 				16A9746B1623D44B008816C2 /* BDADocument.h */,
 				16A9746C1623D44B008816C2 /* BDADocument.m */,
 				16A9746E1623D44B008816C2 /* BDADocument.xib */,
@@ -149,7 +166,9 @@
 		16A974601623D44B008816C2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				16F603131629E9CF00B27B3A /* icon.icns */,
+				1667961616386C660046722A /* txt.icns */,
+				16F6E562163210A40061D107 /* MTIIDoc.icns */,
+				16F6E55E16320D010061D107 /* icon.icns */,
 				16A974611623D44B008816C2 /* Meeting Tracker-Info.plist */,
 				16A974621623D44B008816C2 /* InfoPlist.strings */,
 				16A974651623D44B008816C2 /* main.m */,
@@ -187,9 +206,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		16A974541623D44B008816C2 /* Meeting Tracker */ = {
+		16A974541623D44B008816C2 /* Meeting Tracker III */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 16A9748A1623D44C008816C2 /* Build configuration list for PBXNativeTarget "Meeting Tracker" */;
+			buildConfigurationList = 16A9748A1623D44C008816C2 /* Build configuration list for PBXNativeTarget "Meeting Tracker III" */;
 			buildPhases = (
 				16A974511623D44B008816C2 /* Sources */,
 				16A974521623D44B008816C2 /* Frameworks */,
@@ -199,9 +218,9 @@
 			);
 			dependencies = (
 			);
-			name = "Meeting Tracker";
+			name = "Meeting Tracker III";
 			productName = "Meeting Tracker";
-			productReference = 16A974551623D44B008816C2 /* Meeting Tracker.app */;
+			productReference = 16A974551623D44B008816C2 /* Meeting Tracker III.app */;
 			productType = "com.apple.product-type.application";
 		};
 		16A974781623D44C008816C2 /* Meeting TrackerTests */ = {
@@ -245,7 +264,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				16A974541623D44B008816C2 /* Meeting Tracker */,
+				16A974541623D44B008816C2 /* Meeting Tracker III */,
 				16A974781623D44C008816C2 /* Meeting TrackerTests */,
 			);
 		};
@@ -260,7 +279,10 @@
 				16A9746A1623D44B008816C2 /* Credits.rtf in Resources */,
 				16A974701623D44B008816C2 /* BDADocument.xib in Resources */,
 				16A974731623D44C008816C2 /* MainMenu.xib in Resources */,
-				16F603141629E9CF00B27B3A /* icon.icns in Resources */,
+				16F6E55F16320D010061D107 /* icon.icns in Resources */,
+				16F6E563163210A40061D107 /* MTIIDoc.icns in Resources */,
+				1667961716386C660046722A /* txt.icns in Resources */,
+				16679622163898300046722A /* PreferenceController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +321,8 @@
 				16A9746D1623D44B008816C2 /* BDADocument.m in Sources */,
 				16A974921623D499008816C2 /* Person.m in Sources */,
 				16F6030016292CCF00B27B3A /* Meeting.m in Sources */,
+				1667961516386B5F0046722A /* AppController.m in Sources */,
+				16679621163898300046722A /* PreferenceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +342,7 @@
 /* Begin PBXTargetDependency section */
 		16A9747E1623D44C008816C2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 16A974541623D44B008816C2 /* Meeting Tracker */;
+			target = 16A974541623D44B008816C2 /* Meeting Tracker III */;
 			targetProxy = 16A9747D1623D44C008816C2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -421,11 +445,13 @@
 		16A9748B1623D44C008816C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Meeting Tracker/Meeting Tracker-Prefix.pch";
 				INFOPLIST_FILE = "Meeting Tracker/Meeting Tracker-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "i386 x86_64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -433,11 +459,13 @@
 		16A9748C1623D44C008816C2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Meeting Tracker/Meeting Tracker-Prefix.pch";
 				INFOPLIST_FILE = "Meeting Tracker/Meeting Tracker-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "i386 x86_64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -484,7 +512,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		16A9748A1623D44C008816C2 /* Build configuration list for PBXNativeTarget "Meeting Tracker" */ = {
+		16A9748A1623D44C008816C2 /* Build configuration list for PBXNativeTarget "Meeting Tracker III" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				16A9748B1623D44C008816C2 /* Debug */,
