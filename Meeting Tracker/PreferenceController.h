@@ -12,6 +12,12 @@
 extern NSString *keyAttendeeHourlyRate;
 extern NSString *keyAttendees;
 extern NSString *keyAttendeeName;
+extern NSString *keyAttendeeGridBackgroundColor;
+
+extern NSString *notificationKeyAttendeeHourlyRate;
+extern NSString *notificationKeyAttendees;
+extern NSString *notificationKeyAttendeeName;
+extern NSString *notificationKeyAttendeeGridBackgroundColor;
 
 @interface PreferenceController : NSWindowController
 
@@ -20,6 +26,7 @@ extern NSString *keyAttendeeName;
 @property (assign) IBOutlet NSTextField *lblMeetingAttendees;
 @property (assign) IBOutlet NSSlider *sliderHourlyRate;
 @property (assign) IBOutlet NSTextField *txtAttendeeName;
+@property (assign) IBOutlet NSColorWell *colorWell;
 
 // Class values
 + (NSString *)preferenceAttendeeName;
@@ -29,6 +36,8 @@ extern NSString *keyAttendeeName;
 + (NSNumber *)preferenceAttendees;
 + (void)setPreferenceAttendees:(NSNumber *)aAttendees;
 
++ (NSColor *)preferenceTableBgColor;
++ (void)setPreferenceTableBgColor:(NSColor *)color;
 
 // Actions
 - (IBAction)sliderMoved:(id)sender;

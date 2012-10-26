@@ -13,13 +13,20 @@
 
 + (void)initialize
 {
-	// Create a dictionary
+	// Create a dictionary to hold the preferences values
 	NSMutableDictionary *defaultValues = [NSMutableDictionary dictionary];
 	
 	// Put default values in the dictionary
 	[defaultValues setObject:[NSNumber numberWithDouble:20.] forKey:keyAttendeeHourlyRate];
 	[defaultValues setObject:[NSNumber numberWithInt:0] forKey:keyAttendees];
-    [defaultValues setObject:@"< name >" forKey:keyAttendeeName];
+    [defaultValues setObject:@"<name>" forKey:keyAttendeeName];
+    
+    // Archive the color object
+	NSData *colorAsData = [NSKeyedArchiver archivedDataWithRootObject:
+						   [NSColor lightGrayColor]];
+	
+	// Put color default in the dictionary
+	[defaultValues setObject:colorAsData forKey:keyAttendeeGridBackgroundColor];
 	
 	// Register the dictionary of defaults
 	[[NSUserDefaults standardUserDefaults] registerDefaults: defaultValues];

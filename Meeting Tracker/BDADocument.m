@@ -69,6 +69,16 @@
         
         // Instantiate a meeting with the Stooges
         //_meeting = [[Meeting meetingWithStooges] retain];
+        
+        // Setup the notification center to add ourselves as an observer
+        // for the grid background color change
+        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+		
+		[nc addObserver:self
+			   selector:@selector(handleGridColorChange:)
+				   name:notificationKeyAttendeeGridBackgroundColor
+				 object:nil];
+		NSLog(@"Registered with notification center");
     }
     return self;
 }
@@ -151,6 +161,9 @@
         [[self btnStartMeeting] setEnabled:YES];
         [[self btnEndMeeting] setEnabled:NO];
     }
+    
+    // Set the background color of the Attendee grid based upon the preference value
+    [[self personsTableView] setBackgroundColor:[PreferenceController preferenceTableBgColor]];
 }
 
 + (BOOL)autosavesInPlace
@@ -192,6 +205,7 @@
    	return YES;
 }
 
+
 #pragma mark -
 #pragma mark Update Gui method
 
@@ -217,6 +231,10 @@
 {
     // Invalidate the timer
     [[self timer] invalidate];
+    
+    // Notify that all attendees are being deallocated
+    NSInteger c = [[self meeting] countOfPersonsPresent];
+    [self notifyAttendeeChanges:c * -1];
 }
 
 - (void)dealloc
@@ -235,8 +253,9 @@
     [_numberFormatter release];
     _numberFormatter = nil;
     
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
     [super dealloc];
-
 }
 
 #pragma mark -
@@ -286,6 +305,28 @@
     [[self btnStartMeeting] setEnabled:YES];
     [[self btnEndMeeting] setEnabled:NO];
 
+}
+
+#pragma mark -
+#pragma mark Notification methods
+
+- (void)notifyAttendeeChanges:(NSInteger)changeInAttendees
+{
+    // Launch the notification center to notify the app of changes to the meeting attendees
+	NSDictionary *dict = [NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:changeInAttendees]
+                                                     forKey:keyAttendees];
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+	NSLog(@"Sending notifications");
+	[nc postNotificationName:notificationKeyAttendees
+					  object:self
+					userInfo:dict];
+}
+
+- (void)handleGridColorChange:(NSNotification *)notification
+{
+	NSLog(@"Received notification: %@", notification);
+	NSColor *color = [[notification userInfo] objectForKey:keyAttendeeGridBackgroundColor];
+	[[self personsTableView]  setBackgroundColor:color];
 }
 
 @end

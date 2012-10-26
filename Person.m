@@ -7,6 +7,7 @@
 //
 
 #import "Person.h"
+#import "PreferenceController.h"
 
 @implementation Person
 
@@ -27,8 +28,12 @@ NSString *keyHourlyRate = @"hourlyRate";
 #pragma mark Initialization
 
 - (id)init {
-    return [self initWithName:@"<name>"
-                         rate:20.0];
+    // set the default attendee name and hourly rate from the Preferences
+    double hr = [[PreferenceController preferenceHourlyRate] doubleValue];
+    NSString *an = [PreferenceController preferenceAttendeeName];
+    
+    return [self initWithName:an
+                         rate:hr];
 }
 - (id)initWithName:(NSString *)aParticipantName
               rate:(double)aRate

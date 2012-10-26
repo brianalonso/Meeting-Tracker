@@ -38,7 +38,7 @@
 {
     double rate = 85.;
     Person *person = [[[Person alloc] init] autorelease];
-    [person setHourlyRate:rate];
+    [person setHourlyRate:[NSNumber numberWithDouble:rate]];
     // STAsserEqualsWithAccuracy is necessary to allow for rounding error within floating point numbers
     STAssertEqualsWithAccuracy(rate, [[person hourlyRate] doubleValue], .001, @"hourly rate wrong");
 }

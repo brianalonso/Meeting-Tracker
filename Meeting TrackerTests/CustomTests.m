@@ -39,7 +39,7 @@
 
 - (void)testSetHourlyRate
 {
-    [person setHourlyRate:40.1];
+    [person setHourlyRate:@40.1];
     STAssertEqualObjects([NSNumber numberWithDouble:40.1], [person hourlyRate], @"Test #2: Failed.  Hourly rate incorrect");
 }
 @end

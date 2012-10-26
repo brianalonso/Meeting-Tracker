@@ -8,6 +8,7 @@
 
 #import "Meeting.h"
 #import "Person.h"
+#import "PreferenceController.h"
 
 @implementation Meeting
 
@@ -154,12 +155,18 @@ NSString *keyPersonsPresent = @"personsPresent";
 - (void) addToPersonsPresent:(id)personsPresentObject
 {
     [[self personsPresent] addObject:personsPresentObject];
+    
+    // Notify the application of changes to the number of meeting attendees
+    [self notifyAttendeeChanges:1];
 }
 
 - (void) removeFromPersonsPresent:(id)personsPresentObject
 {
     // remove person from the array
     [[self personsPresent] removeObject:personsPresentObject];
+    
+    // Notify the application of changes to the number of meeting attendees
+    [self notifyAttendeeChanges:-1];
 }
 
 - (void) removeObjectFromPersonsPresentAtIndex:(NSUInteger)idx
@@ -169,6 +176,9 @@ NSString *keyPersonsPresent = @"personsPresent";
     
     // Remove the person from the array
     [[self personsPresent] removeObjectAtIndex:idx];
+    
+    // Notify the application of changes to the number of meeting attendees
+    [self notifyAttendeeChanges:-1];
 }
 
 - (void) insertObject:(id)anObject inPersonsPresentAtIndex:(NSUInteger)idx
@@ -178,6 +188,9 @@ NSString *keyPersonsPresent = @"personsPresent";
     
     // start observing the hourly rate
     [anObject addObserver:self forKeyPath:personBillingRateKeypath options:NSKeyValueObservingOptionNew context:nil];
+    
+    // Notify the application of changes to the number of meeting attendees
+    [self notifyAttendeeChanges:1];
 }
 
 - (NSDate *) startingTime
@@ -215,7 +228,6 @@ NSString *keyPersonsPresent = @"personsPresent";
         return 0;
     }
     return [[self personsPresent] count];
-    
 }
 
 - (NSNumber *) totalBillingRate
@@ -255,7 +267,6 @@ NSString *keyPersonsPresent = @"personsPresent";
     
     // Using a block
     // return [NSNumber numberWithDouble: [self blockComputedTotalBillingRate] * [self elapsedHours]];
-
 }
 
 #pragma mark -
@@ -353,6 +364,21 @@ NSString *keyPersonsPresent = @"personsPresent";
     _personsPresent = nil;
     
     [super dealloc];
+}
+
+#pragma mark -
+#pragma mark Notification methods
+
+- (void)notifyAttendeeChanges:(NSInteger)changeInAttendees
+{
+    // Launch the notification center to notify the app of changes to the meeting attendees
+	NSDictionary *dict = [NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:changeInAttendees]
+                                                     forKey:keyAttendees];
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+	NSLog(@"Sending notifications");
+	[nc postNotificationName:notificationKeyAttendees
+					  object:self
+					userInfo:dict];
 }
 
 #pragma mark -
