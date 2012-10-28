@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16202B4D163B2EA200DAF410 /* CustomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16202B4C163B2EA200DAF410 /* CustomTests.m */; };
 		1667961516386B5F0046722A /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1667961416386B5F0046722A /* AppController.m */; };
 		1667961716386C660046722A /* txt.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1667961616386C660046722A /* txt.icns */; };
 		16679621163898300046722A /* PreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1667961F163898300046722A /* PreferenceController.m */; };
 		16679622163898300046722A /* PreferenceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16679620163898300046722A /* PreferenceController.xib */; };
+		16A0C61D163A3F7900284303 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 16A0C61C163A3F7900284303 /* Icon.icns */; };
+		16A0C61F163A40B600284303 /* MTIII.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 16A0C61E163A40B600284303 /* MTIII.iconset */; };
 		16A9745A1623D44B008816C2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A974591623D44B008816C2 /* Cocoa.framework */; };
 		16A974641623D44B008816C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16A974621623D44B008816C2 /* InfoPlist.strings */; };
 		16A974661623D44B008816C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A974651623D44B008816C2 /* main.m */; };
@@ -23,12 +26,7 @@
 		16A974841623D44C008816C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16A974821623D44C008816C2 /* InfoPlist.strings */; };
 		16A974871623D44C008816C2 /* Meeting_TrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A974861623D44C008816C2 /* Meeting_TrackerTests.m */; };
 		16A974921623D499008816C2 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A974911623D499008816C2 /* Person.m */; };
-		16A974951623D6FB008816C2 /* CustomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A974941623D6FB008816C2 /* CustomTests.m */; };
-		16F602DB1629060B00B27B3A /* testMeeting.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F602D81629060B00B27B3A /* testMeeting.m */; };
-		16F602DC1629060B00B27B3A /* testPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F602DA1629060B00B27B3A /* testPerson.m */; };
 		16F6030016292CCF00B27B3A /* Meeting.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F602FF16292CCF00B27B3A /* Meeting.m */; };
-		16F6E55F16320D010061D107 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 16F6E55E16320D010061D107 /* icon.icns */; };
-		16F6E563163210A40061D107 /* MTIIDoc.icns in Resources */ = {isa = PBXBuildFile; fileRef = 16F6E562163210A40061D107 /* MTIIDoc.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,12 +40,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16202B4B163B2EA200DAF410 /* CustomTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTests.h; sourceTree = "<group>"; };
+		16202B4C163B2EA200DAF410 /* CustomTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTests.m; sourceTree = "<group>"; };
 		1667961316386B5F0046722A /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		1667961416386B5F0046722A /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		1667961616386C660046722A /* txt.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = txt.icns; sourceTree = "<group>"; };
 		1667961E163898300046722A /* PreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferenceController.h; sourceTree = "<group>"; };
 		1667961F163898300046722A /* PreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferenceController.m; sourceTree = "<group>"; };
 		16679620163898300046722A /* PreferenceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferenceController.xib; sourceTree = "<group>"; };
+		16A0C61C163A3F7900284303 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
+		16A0C61E163A40B600284303 /* MTIII.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = MTIII.iconset; sourceTree = "<group>"; };
 		16A974551623D44B008816C2 /* Meeting Tracker III.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meeting Tracker III.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A974591623D44B008816C2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		16A9745C1623D44B008816C2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -70,16 +72,8 @@
 		16A974861623D44C008816C2 /* Meeting_TrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Meeting_TrackerTests.m; sourceTree = "<group>"; };
 		16A974901623D499008816C2 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		16A974911623D499008816C2 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		16A974931623D6FB008816C2 /* CustomTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTests.h; sourceTree = "<group>"; };
-		16A974941623D6FB008816C2 /* CustomTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTests.m; sourceTree = "<group>"; };
 		16F602D5162905BC00B27B3A /* Meeting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meeting.h; sourceTree = "<group>"; };
-		16F602D71629060B00B27B3A /* testMeeting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testMeeting.h; sourceTree = "<group>"; };
-		16F602D81629060B00B27B3A /* testMeeting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testMeeting.m; sourceTree = "<group>"; };
-		16F602D91629060B00B27B3A /* testPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testPerson.h; sourceTree = "<group>"; };
-		16F602DA1629060B00B27B3A /* testPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testPerson.m; sourceTree = "<group>"; };
 		16F602FF16292CCF00B27B3A /* Meeting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meeting.m; sourceTree = "<group>"; };
-		16F6E55E16320D010061D107 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon.icns; path = ../icon.icns; sourceTree = "<group>"; };
-		16F6E562163210A40061D107 /* MTIIDoc.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MTIIDoc.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,9 +160,9 @@
 		16A974601623D44B008816C2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				16A0C61E163A40B600284303 /* MTIII.iconset */,
+				16A0C61C163A3F7900284303 /* Icon.icns */,
 				1667961616386C660046722A /* txt.icns */,
-				16F6E562163210A40061D107 /* MTIIDoc.icns */,
-				16F6E55E16320D010061D107 /* icon.icns */,
 				16A974611623D44B008816C2 /* Meeting Tracker-Info.plist */,
 				16A974621623D44B008816C2 /* InfoPlist.strings */,
 				16A974651623D44B008816C2 /* main.m */,
@@ -181,15 +175,11 @@
 		16A9747F1623D44C008816C2 /* Meeting TrackerTests */ = {
 			isa = PBXGroup;
 			children = (
-				16F602D71629060B00B27B3A /* testMeeting.h */,
-				16F602D81629060B00B27B3A /* testMeeting.m */,
-				16F602D91629060B00B27B3A /* testPerson.h */,
-				16F602DA1629060B00B27B3A /* testPerson.m */,
+				16202B4B163B2EA200DAF410 /* CustomTests.h */,
+				16202B4C163B2EA200DAF410 /* CustomTests.m */,
 				16A974851623D44C008816C2 /* Meeting_TrackerTests.h */,
 				16A974861623D44C008816C2 /* Meeting_TrackerTests.m */,
 				16A974801623D44C008816C2 /* Supporting Files */,
-				16A974931623D6FB008816C2 /* CustomTests.h */,
-				16A974941623D6FB008816C2 /* CustomTests.m */,
 			);
 			path = "Meeting TrackerTests";
 			sourceTree = "<group>";
@@ -279,10 +269,10 @@
 				16A9746A1623D44B008816C2 /* Credits.rtf in Resources */,
 				16A974701623D44B008816C2 /* BDADocument.xib in Resources */,
 				16A974731623D44C008816C2 /* MainMenu.xib in Resources */,
-				16F6E55F16320D010061D107 /* icon.icns in Resources */,
-				16F6E563163210A40061D107 /* MTIIDoc.icns in Resources */,
 				1667961716386C660046722A /* txt.icns in Resources */,
 				16679622163898300046722A /* PreferenceController.xib in Resources */,
+				16A0C61D163A3F7900284303 /* Icon.icns in Resources */,
+				16A0C61F163A40B600284303 /* MTIII.iconset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,9 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16A974871623D44C008816C2 /* Meeting_TrackerTests.m in Sources */,
-				16A974951623D6FB008816C2 /* CustomTests.m in Sources */,
-				16F602DB1629060B00B27B3A /* testMeeting.m in Sources */,
-				16F602DC1629060B00B27B3A /* testPerson.m in Sources */,
+				16202B4D163B2EA200DAF410 /* CustomTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

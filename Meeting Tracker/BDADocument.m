@@ -23,6 +23,8 @@
 
 @implementation BDADocument
 
+NSUndoManager *undoMgr;
+
 #pragma mark -
 #pragma mark Properties
 
@@ -64,12 +66,12 @@
         _dateFormatter = nil;
         _numberFormatter = nil;
         
+        // Set the external UndoManager pointer
+        undoMgr = [self undoManager];
+        
         // Create an empty Meeting instance
         _meeting = [[[Meeting alloc] init] retain];
-        
-        // Instantiate a meeting with the Stooges
-        //_meeting = [[Meeting meetingWithStooges] retain];
-        
+                
         // Setup the notification center to add ourselves as an observer
         // for the grid background color change
         NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
@@ -199,6 +201,8 @@
 		}
 		return NO;
 	}
+    
+    // Call the setter to retain the object
 	[self setMeeting:archivedMeeting];
     
     NSLog(@"%@", [[self meeting] description]);
@@ -252,7 +256,7 @@
     
     [_numberFormatter release];
     _numberFormatter = nil;
-    
+        
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
     [super dealloc];
@@ -304,7 +308,24 @@
     // Set the start/end buttons
     [[self btnStartMeeting] setEnabled:YES];
     [[self btnEndMeeting] setEnabled:NO];
+}
 
+- (IBAction)startMarxBrothers:(id)sender
+{
+    [self setMeeting:[Meeting meetingWithMarxBrothers]];
+    NSLog(@"%@", [_meeting description]);
+}
+
+- (IBAction)startStooges:(id)sender
+{
+    [self setMeeting:[Meeting meetingWithStooges]];
+    NSLog(@"%@", [_meeting description]);
+}
+
+- (IBAction)startStarTrek:(id)sender
+{
+    [self setMeeting:[Meeting meetingWithCaptains]];
+    NSLog(@"%@", [_meeting description]);
 }
 
 #pragma mark -
@@ -328,5 +349,4 @@
 	NSColor *color = [[notification userInfo] objectForKey:keyAttendeeGridBackgroundColor];
 	[[self personsTableView]  setBackgroundColor:color];
 }
-
 @end

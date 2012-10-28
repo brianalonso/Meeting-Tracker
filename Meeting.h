@@ -15,6 +15,7 @@ extern NSString *personBillingRateKeypath;
     NSDate *_startingTime;
 	NSDate *_endingTime;
 	NSMutableArray *_personsPresent;
+    NSUndoManager *_undo;
 }
 
 - (NSDate *)startingTime;

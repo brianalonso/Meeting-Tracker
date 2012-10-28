@@ -9,6 +9,7 @@
 #import "Meeting.h"
 #import "Person.h"
 #import "PreferenceController.h"
+#import "BDADocument.h"
 
 @implementation Meeting
 
@@ -91,7 +92,7 @@ NSString *keyPersonsPresent = @"personsPresent";
 {
     // to determine when total billing rate changes, need
     // to observe personsPresent
-    return [NSSet setWithObject:@"personsPresent"];
+    return [NSSet setWithObject:keyPersonsPresent];
 }
 
 #pragma mark -
@@ -104,6 +105,9 @@ NSString *keyPersonsPresent = @"personsPresent";
     {
         // Alloc the personsPresent array
         _personsPresent = [[[NSMutableArray alloc] init] retain];
+        
+        // Set the local NSUndoManager pointer from the Document
+        _undo = undoMgr;
     }
     return self;
 }
@@ -113,7 +117,6 @@ NSString *keyPersonsPresent = @"personsPresent";
 
 - (NSMutableArray *)personsPresent
 {
-    
     if (_personsPresent == nil) {
         // Lazy loading of personsPresent arrary
         [_personsPresent = [[NSMutableArray alloc] init] retain];
@@ -127,16 +130,16 @@ NSString *keyPersonsPresent = @"personsPresent";
     if (_personsPresent != nil) {
         [aPersonsPresent retain];
         
-        // stop observing
+        // stop observing the hourlyRate
         [self stopObservingPersonsPresent];
         [_personsPresent release];
         _personsPresent = aPersonsPresent;
         
-        // start observing
+        // start observing the hourlyRate
         [self startObservingPersonsPresent];
     }
 }
-
+static void *MyDocumentKVOContext;
 - (void)stopObservingPersonsPresent
 {
     // Remove self as an observer for the hourlyRate
@@ -149,12 +152,21 @@ NSString *keyPersonsPresent = @"personsPresent";
 {
     // Add self as an observer for the hourlyRate
     for (Person *p in _personsPresent) {
-        [p addObserver:self forKeyPath:personBillingRateKeypath options:NSKeyValueObservingOptionNew context:nil];
+        [p addObserver:self forKeyPath:personBillingRateKeypath options:NSKeyValueObservingOptionOld context:&MyDocumentKVOContext];
     }
 }
 - (void) addToPersonsPresent:(id)personsPresentObject
 {
+    // Add the inverse of this operation to the undo stack
+    [[_undo prepareWithInvocationTarget:self] removeFromPersonsPresent:personsPresentObject];
+    if (![_undo isUndoing]) {
+        [_undo setActionName:@"Add Person"];
+    }
+
     [[self personsPresent] addObject:personsPresentObject];
+    
+    // start observing the hourly rate
+    [personsPresentObject addObserver:self forKeyPath:personBillingRateKeypath options:NSKeyValueObservingOptionOld context:&MyDocumentKVOContext];
     
     // Notify the application of changes to the number of meeting attendees
     [self notifyAttendeeChanges:1];
@@ -162,6 +174,12 @@ NSString *keyPersonsPresent = @"personsPresent";
 
 - (void) removeFromPersonsPresent:(id)personsPresentObject
 {
+    // Add the inverse of this operation to the undo stack
+    [[_undo prepareWithInvocationTarget:self] insertObject:personsPresentObject];
+    if (![_undo isUndoing]) {
+        [_undo setActionName:@"Remove Person"];
+	}
+    
     // remove person from the array
     [[self personsPresent] removeObject:personsPresentObject];
     
@@ -171,6 +189,15 @@ NSString *keyPersonsPresent = @"personsPresent";
 
 - (void) removeObjectFromPersonsPresentAtIndex:(NSUInteger)idx
 {
+    // Add the inverse of this operation to the undo stack
+    Person *p = [_personsPresent objectAtIndex:idx];
+   
+    [[_undo prepareWithInvocationTarget:self] insertObject:p
+                                       inPersonsPresentAtIndex:idx];
+    if (![_undo isUndoing]) {
+        [_undo setActionName:@"Remove Person Object"];
+	}
+
     // remove the observer for the hourly rate
     [[[self personsPresent] objectAtIndex:idx] removeObserver:self forKeyPath:personBillingRateKeypath];
     
@@ -183,11 +210,18 @@ NSString *keyPersonsPresent = @"personsPresent";
 
 - (void) insertObject:(id)anObject inPersonsPresentAtIndex:(NSUInteger)idx
 {
+    // Add the inverse of this operation to the undo stack
+
+    [[_undo prepareWithInvocationTarget:self] removeObjectFromPersonsPresentAtIndex:idx];
+    if (![_undo isUndoing]) {
+        [_undo setActionName:@"Add Person Object"];
+    }
+
     // Add a person to the array
     [[self personsPresent] insertObject:anObject atIndex:idx];
     
     // start observing the hourly rate
-    [anObject addObserver:self forKeyPath:personBillingRateKeypath options:NSKeyValueObservingOptionNew context:nil];
+    [anObject addObserver:self forKeyPath:personBillingRateKeypath options:NSKeyValueObservingOptionOld context:&MyDocumentKVOContext];
     
     // Notify the application of changes to the number of meeting attendees
     [self notifyAttendeeChanges:1];
@@ -242,7 +276,7 @@ NSString *keyPersonsPresent = @"personsPresent";
     return [NSNumber numberWithDouble:totalrate];
     */
     
-    // Using a block
+    // Using a block to compute the billing rate
     return [NSNumber numberWithDouble:[self blockComputedTotalBillingRate]];
 }
 
@@ -257,6 +291,7 @@ NSString *keyPersonsPresent = @"personsPresent";
 
 - (NSNumber *) accruedCost
 {
+    // Use fast enumeration to compute the accrued cost
     double totalcost = 0.;
     
     for (Person *person in [self personsPresent])
@@ -271,8 +306,29 @@ NSString *keyPersonsPresent = @"personsPresent";
 
 #pragma mark -
 #pragma mark Key-Value methods
+- (void)changeKeyPath:(NSString *)keyPath
+			 ofObject:(id)obj
+			  toValue:(id)newValue
+{
+	// setValue:forKeyPath: will cause the key-value observing method
+    // to be called, which takes care of the undo stuff
+    [obj setValue:newValue forKeyPath:keyPath];
+}
+
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
+    id oldValue = [change objectForKey:NSKeyValueChangeOldKey];
+    // NSNull objects are used to represent nil in a dictionary
+    if (oldValue == [NSNull null]) {
+        oldValue = nil;
+    }
+    NSLog(@"oldValue = %@", oldValue);
+    [[_undo prepareWithInvocationTarget:self] changeKeyPath:keyPath
+                                                  ofObject:object
+                                                   toValue:oldValue];
+    [_undo setActionName:@"Edit Hourly Rate"];
+    
     // Update the total billing rate
     [self totalBillingRate];
 }
@@ -375,7 +431,7 @@ NSString *keyPersonsPresent = @"personsPresent";
 	NSDictionary *dict = [NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:changeInAttendees]
                                                      forKey:keyAttendees];
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-	NSLog(@"Sending notifications");
+	NSLog(@"Sending attendee change notifications");
 	[nc postNotificationName:notificationKeyAttendees
 					  object:self
 					userInfo:dict];

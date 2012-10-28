@@ -9,15 +9,15 @@
 #import <Cocoa/Cocoa.h>
 
 // External key references
-extern NSString *keyAttendeeHourlyRate;
-extern NSString *keyAttendees;
-extern NSString *keyAttendeeName;
-extern NSString *keyAttendeeGridBackgroundColor;
+extern NSString *const keyAttendeeHourlyRate;
+extern NSString *const keyAttendees;
+extern NSString *const keyAttendeeName;
+extern NSString *const keyAttendeeGridBackgroundColor;
 
-extern NSString *notificationKeyAttendeeHourlyRate;
-extern NSString *notificationKeyAttendees;
-extern NSString *notificationKeyAttendeeName;
-extern NSString *notificationKeyAttendeeGridBackgroundColor;
+extern NSString *const notificationKeyAttendeeHourlyRate;
+extern NSString *const notificationKeyAttendees;
+extern NSString *const notificationKeyAttendeeName;
+extern NSString *const notificationKeyAttendeeGridBackgroundColor;
 
 @interface PreferenceController : NSWindowController
 
@@ -35,7 +35,6 @@ extern NSString *notificationKeyAttendeeGridBackgroundColor;
 + (void)setPreferenceHourlyRate:(NSNumber *)aHourlyRate;
 + (NSNumber *)preferenceAttendees;
 + (void)setPreferenceAttendees:(NSNumber *)aAttendees;
-
 + (NSColor *)preferenceTableBgColor;
 + (void)setPreferenceTableBgColor:(NSColor *)color;
 

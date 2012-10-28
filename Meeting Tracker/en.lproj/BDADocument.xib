@@ -130,6 +130,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{398, 19}, {107, 19}}</string>
 							<reference key="NSSuperview" ref="568628114"/>
+							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="285022932">
@@ -161,7 +162,7 @@
 											<int key="NSvFlags">256</int>
 											<string key="NSFrameSize">{483, 234}</string>
 											<reference key="NSSuperview" ref="678621351"/>
-											<reference key="NSNextKeyView" ref="414312482"/>
+											<reference key="NSNextKeyView" ref="413420230"/>
 											<string key="NSReuseIdentifierKey">_NS:13</string>
 											<bool key="NSEnabled">YES</bool>
 											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -381,7 +382,7 @@
 							</array>
 							<string key="NSFrame">{{20, 55}, {485, 252}}</string>
 							<reference key="NSSuperview" ref="568628114"/>
-							<reference key="NSNextKeyView" ref="678621351"/>
+							<reference key="NSNextKeyView" ref="414312482"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<int key="NSsFlags">133682</int>
 							<reference key="NSVScroller" ref="413420230"/>
@@ -1085,19 +1086,19 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">remove:</string>
-						<reference key="source" ref="86226243"/>
-						<reference key="destination" ref="63330580"/>
-					</object>
-					<int key="connectionID">100240</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
 						<string key="label">add:</string>
 						<reference key="source" ref="86226243"/>
 						<reference key="destination" ref="264188422"/>
 					</object>
-					<int key="connectionID">100245</int>
+					<int key="connectionID">100375</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">remove:</string>
+						<reference key="source" ref="86226243"/>
+						<reference key="destination" ref="63330580"/>
+					</object>
+					<int key="connectionID">100376</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -3303,7 +3304,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">100372</int>
+			<int key="maxID">100376</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>

@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "16A974541623D44B008816C2"
-               BuildableName = "Meeting Tracker.app"
-               BlueprintName = "Meeting Tracker"
+               BuildableName = "Meeting Tracker III.app"
+               BlueprintName = "Meeting Tracker III"
                ReferencedContainer = "container:Meeting Tracker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "16A974541623D44B008816C2"
-            BuildableName = "Meeting Tracker.app"
-            BlueprintName = "Meeting Tracker"
+            BuildableName = "Meeting Tracker III.app"
+            BlueprintName = "Meeting Tracker III"
             ReferencedContainer = "container:Meeting Tracker.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -62,12 +62,17 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "16A974541623D44B008816C2"
-            BuildableName = "Meeting Tracker.app"
-            BlueprintName = "Meeting Tracker"
+            BuildableName = "Meeting Tracker III.app"
+            BlueprintName = "Meeting Tracker III"
             ReferencedContainer = "container:Meeting Tracker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
+         <AdditionalOption
+            key = "NSZombieEnabled"
+            value = "YES"
+            isEnabled = "YES">
+         </AdditionalOption>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
@@ -80,8 +85,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "16A974541623D44B008816C2"
-            BuildableName = "Meeting Tracker.app"
-            BlueprintName = "Meeting Tracker"
+            BuildableName = "Meeting Tracker III.app"
+            BlueprintName = "Meeting Tracker III"
             ReferencedContainer = "container:Meeting Tracker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

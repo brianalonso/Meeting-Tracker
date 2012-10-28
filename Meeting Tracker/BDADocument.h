@@ -9,6 +9,9 @@
 #import <Cocoa/Cocoa.h>
 
 @class Meeting;
+
+extern NSUndoManager *undoMgr;
+
 @interface BDADocument : NSDocument {
     NSDateFormatter *_dateFormatter;
     NSNumberFormatter *_numberFormatter;
@@ -41,6 +44,11 @@
 - (IBAction)startMeeting:(id)sender;
 - (IBAction)endMeeting:(id)sender;
 
+- (IBAction)startMarxBrothers:(id)sender;
+- (IBAction)startStooges:(id)sender;
+- (IBAction)startStarTrek:(id)sender;
+
 - (void) updateGui:(NSTimer *) theTimer;
 - (void) windowWillClose:(NSNotification *) notification;
+
 @end

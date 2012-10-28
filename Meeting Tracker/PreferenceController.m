@@ -8,16 +8,16 @@
 
 #import "PreferenceController.h"
 
-NSString *keyAttendeeHourlyRate = @"attendeeHourlyRate";
-NSString *keyAttendees = @"meetingAttendees";
-NSString *keyAttendeeName = @"attendeeDefaultName";
-NSString *keyAttendeeGridBackgroundColor = @"attendeeGridBackgroundColor";
+NSString *const keyAttendeeHourlyRate = @"attendeeHourlyRate";
+NSString *const keyAttendees = @"meetingAttendees";
+NSString *const keyAttendeeName = @"attendeeDefaultName";
+NSString *const keyAttendeeGridBackgroundColor = @"attendeeGridBackgroundColor";
 
 // Notification constants
-NSString *notificationKeyAttendeeHourlyRate = @"notificationAttendeeHourlyRate";
-NSString *notificationKeyAttendees = @"notificationMeetingAttendees";
-NSString *notificationKeyAttendeeName = @"notificationAttendeeDefaultName";
-NSString *notificationKeyAttendeeGridBackgroundColor = @"notificationAttendeeGridBackgroundColor";
+NSString *const notificationKeyAttendeeHourlyRate = @"notificationAttendeeHourlyRate";
+NSString *const notificationKeyAttendees = @"notificationMeetingAttendees";
+NSString *const notificationKeyAttendeeName = @"notificationAttendeeDefaultName";
+NSString *const notificationKeyAttendeeGridBackgroundColor = @"notificationAttendeeGridBackgroundColor";
 
 @implementation PreferenceController
 
@@ -111,7 +111,6 @@ NSString *notificationKeyAttendeeGridBackgroundColor = @"notificationAttendeeGri
 
 - (BOOL)windowShouldClose:(id)sender
 {
-	[[NSColorPanel sharedColorPanel] orderOut:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 
 	return YES;
