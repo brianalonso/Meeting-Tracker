@@ -13,12 +13,13 @@
 
 + (void)initialize
 {
-	// Create a dictionary to hold the preferences values
+	// Create a dictionary to hold the default preferences values
 	NSMutableDictionary *defaultValues = [NSMutableDictionary dictionary];
 	
 	// Put default values in the dictionary
 	[defaultValues setObject:[NSNumber numberWithDouble:20.] forKey:keyAttendeeHourlyRate];
 	[defaultValues setObject:[NSNumber numberWithInt:0] forKey:keyAttendees];
+    [defaultValues setObject:[NSNumber numberWithInt:0] forKey:keyAttendeesCumulative];
     [defaultValues setObject:@"<name>" forKey:keyAttendeeName];
     
     // Archive the color object

@@ -13,8 +13,11 @@
 
 @implementation Meeting
 
+// Constants for KVO
 NSString *personBillingRateKeypath = @"hourlyRate";
+NSString *personTotalBillingRateKeyPath = @"totalBillingRate";
 
+// Constants for encoding/decoding
 NSString *keyStartingTime = @"startingTime";
 NSString *keyEndingTime = @"endingTime";
 NSString *keyPersonsPresent = @"personsPresent";
@@ -108,6 +111,8 @@ NSString *keyPersonsPresent = @"personsPresent";
         
         // Set the local NSUndoManager pointer from the Document
         _undo = undoMgr;
+        
+        [self totalBillingRate];
     }
     return self;
 }
@@ -168,8 +173,12 @@ static void *MyDocumentKVOContext;
     // start observing the hourly rate
     [personsPresentObject addObserver:self forKeyPath:personBillingRateKeypath options:NSKeyValueObservingOptionOld context:&MyDocumentKVOContext];
     
-    // Notify the application of changes to the number of meeting attendees
+    // Notify the Preferences page of changes to the number of meeting attendees to support 'real time' value
     [self notifyAttendeeChanges:1];
+    
+    // Save the cumulative amount in the preferences
+    NSInteger attendees = [[PreferenceController preferenceAttendeesCumulative] integerValue] + 1;
+    [PreferenceController setPreferenceAttendeesCumulative:[NSNumber numberWithInteger:attendees]];
 }
 
 - (void) removeFromPersonsPresent:(id)personsPresentObject
@@ -183,7 +192,7 @@ static void *MyDocumentKVOContext;
     // remove person from the array
     [[self personsPresent] removeObject:personsPresentObject];
     
-    // Notify the application of changes to the number of meeting attendees
+    // Notify the Preferences page of changes to the number of meeting attendees to support 'real time' value
     [self notifyAttendeeChanges:-1];
 }
 
@@ -204,7 +213,7 @@ static void *MyDocumentKVOContext;
     // Remove the person from the array
     [[self personsPresent] removeObjectAtIndex:idx];
     
-    // Notify the application of changes to the number of meeting attendees
+    // Notify the Preferences page of changes to the number of meeting attendees to support 'real time' value
     [self notifyAttendeeChanges:-1];
 }
 
@@ -223,8 +232,12 @@ static void *MyDocumentKVOContext;
     // start observing the hourly rate
     [anObject addObserver:self forKeyPath:personBillingRateKeypath options:NSKeyValueObservingOptionOld context:&MyDocumentKVOContext];
     
-    // Notify the application of changes to the number of meeting attendees
+    // Notify the Preferences page of changes to the number of meeting attendees to support 'real time' value
     [self notifyAttendeeChanges:1];
+    
+    // Save the cumulative amount in the preferences
+    NSInteger attendees = [[PreferenceController preferenceAttendeesCumulative] integerValue] + 1;
+    [PreferenceController setPreferenceAttendeesCumulative:[NSNumber numberWithInteger:attendees]];
 }
 
 - (NSDate *) startingTime
@@ -329,8 +342,10 @@ static void *MyDocumentKVOContext;
                                                    toValue:oldValue];
     [_undo setActionName:@"Edit Hourly Rate"];
     
-    // Update the total billing rate
+    // Update the total billing rate and let the KVO observers in on the modification
+    [self willChangeValueForKey:personTotalBillingRateKeyPath];
     [self totalBillingRate];
+    [self didChangeValueForKey:personTotalBillingRateKeyPath];
 }
 
 

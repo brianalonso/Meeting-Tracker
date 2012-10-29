@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 extern NSString *personBillingRateKeypath;
+extern NSString *personTotalBillingRateKeyPath;
 
 @interface Meeting : NSObject <NSCoding>
 {

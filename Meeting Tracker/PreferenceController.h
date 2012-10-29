@@ -13,11 +13,14 @@ extern NSString *const keyAttendeeHourlyRate;
 extern NSString *const keyAttendees;
 extern NSString *const keyAttendeeName;
 extern NSString *const keyAttendeeGridBackgroundColor;
+extern NSString *const keyAttendeesCumulative;
 
 extern NSString *const notificationKeyAttendeeHourlyRate;
 extern NSString *const notificationKeyAttendees;
 extern NSString *const notificationKeyAttendeeName;
 extern NSString *const notificationKeyAttendeeGridBackgroundColor;
+NSString *const notificationKeyGetCurrentAttendees;
+NSString *const notificationKeyReplyCurrentAttendees;
 
 @interface PreferenceController : NSWindowController
 
@@ -27,6 +30,7 @@ extern NSString *const notificationKeyAttendeeGridBackgroundColor;
 @property (assign) IBOutlet NSSlider *sliderHourlyRate;
 @property (assign) IBOutlet NSTextField *txtAttendeeName;
 @property (assign) IBOutlet NSColorWell *colorWell;
+@property (assign) IBOutlet NSTextField *lblCumulativeAttendees;
 
 // Class values
 + (NSString *)preferenceAttendeeName;
@@ -37,6 +41,8 @@ extern NSString *const notificationKeyAttendeeGridBackgroundColor;
 + (void)setPreferenceAttendees:(NSNumber *)aAttendees;
 + (NSColor *)preferenceTableBgColor;
 + (void)setPreferenceTableBgColor:(NSColor *)color;
++ (NSNumber *)preferenceAttendeesCumulative;
++ (void)setPreferenceAttendeesCumulative:(NSNumber *)aAttendeesCumulative;
 
 // Actions
 - (IBAction)sliderMoved:(id)sender;

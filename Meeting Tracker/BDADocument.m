@@ -76,9 +76,16 @@ NSUndoManager *undoMgr;
         // for the grid background color change
         NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
 		
+        // Inform me when the Preferences grid background color changes
 		[nc addObserver:self
 			   selector:@selector(handleGridColorChange:)
 				   name:notificationKeyAttendeeGridBackgroundColor
+				 object:nil];
+        
+        // Inform me when the Preferences window wants to know all of my attendees
+        [nc addObserver:self
+			   selector:@selector(notifyCurrentAttendees:)
+				   name:notificationKeyGetCurrentAttendees
 				 object:nil];
 		NSLog(@"Registered with notification center");
     }
@@ -145,7 +152,7 @@ NSUndoManager *undoMgr;
     [[self lblTime] setStringValue:[[self dateFormatter] stringFromDate:[NSDate date]]];
 
     // Create a timer
-    [self setTimer:[NSTimer scheduledTimerWithTimeInterval:0.1
+    [self setTimer:[NSTimer scheduledTimerWithTimeInterval:0.2
                                                     target:self
                                                   selector:@selector(updateGui:)
                                                   userInfo:nil
@@ -236,7 +243,7 @@ NSUndoManager *undoMgr;
     // Invalidate the timer
     [[self timer] invalidate];
     
-    // Notify that all attendees are being deallocated
+    // Notify that all attendees are being deallocated to update 'real time' value
     NSInteger c = [[self meeting] countOfPersonsPresent];
     [self notifyAttendeeChanges:c * -1];
 }
@@ -294,7 +301,6 @@ NSUndoManager *undoMgr;
     // Set the start/end buttons
     [[self btnStartMeeting] setEnabled:NO];
     [[self btnEndMeeting] setEnabled:YES];
-
 }
 
 - (IBAction)endMeeting:(id)sender {
@@ -339,6 +345,19 @@ NSUndoManager *undoMgr;
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
 	NSLog(@"Sending notifications");
 	[nc postNotificationName:notificationKeyAttendees
+					  object:self
+					userInfo:dict];
+}
+
+- (void)notifyCurrentAttendees:(NSNotification *)notification
+{
+    // Launch the notification center to notify the Preferences page of all of our attendees
+    NSInteger c = [[self meeting] countOfPersonsPresent];
+	NSDictionary *dict = [NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:c]
+                                                     forKey:keyAttendees];
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+	NSLog(@"Sending notifications for count of current attendees");
+	[nc postNotificationName:notificationKeyReplyCurrentAttendees
 					  object:self
 					userInfo:dict];
 }

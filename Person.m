@@ -8,10 +8,10 @@
 
 #import "Person.h"
 #import "PreferenceController.h"
-#import "BDADocument.h"
 
 @implementation Person
 
+// Constants for encoding/decoding
 NSString *keyPersonName = @"name";
 NSString *keyHourlyRate = @"hourlyRate";
 
@@ -42,9 +42,6 @@ NSString *keyHourlyRate = @"hourlyRate";
     self = [super init];
     if (self)
     {
-        // Set the local NSUndoManager pointer
-        _undo = undoMgr;
-        
         // Assign values to the ivars directly
         _name = [aParticipantName copy];
         _hourlyRate = [[NSNumber numberWithDouble:aRate] retain];

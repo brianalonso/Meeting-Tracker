@@ -11,7 +11,6 @@
 @interface Person : NSObject <NSCoding> {
     NSString   *_name;
     NSNumber   *_hourlyRate;
-    NSUndoManager *_undo;
 }
 
 // Properties
